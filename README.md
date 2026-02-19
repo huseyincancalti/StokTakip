@@ -1,45 +1,45 @@
-# 📦 Stok Takip (FIFO Yöntemi)
+# 📦 Stock Tracking (FIFO Method)
 
-> Modern, taşınabilir ve verimli stok maliyet hesaplama uygulaması. **FIFO (First-In-First-Out)** prensibiyle çalışır.
+> A modern, portable, and efficient stock cost calculation application. Built with the **FIFO (First-In-First-Out)** principle.
 
-## 🚀 Proje Hakkında
+## 🚀 About the Project
 
-**Stok Takip**, küçük işletmeler, depolar ve bireysel kullanıcılar için geliştirilmiş, ürün giriş-çıkışlarını takip eden ve maliyetleri **FIFO (İlk Giren İlk Çıkar)** yöntemine göre hesaplayan profesyonel bir masaüstü uygulamasıdır.
+**Stock Tracking** is a professional desktop application developed for small businesses, warehouses, and individual users to track product entries and exits, calculating costs according to the **FIFO (First-In-First-Out)** method.
 
-Karmaşık Excel dosyalarıyla uğraşmak yerine, sade ve modern bir arayüz ile stok yönetiminizi kolaylaştırır.
+Instead of dealing with complex Excel files, it streamlines your stock management with a simple, modern interface.
 
-## ✨ Özellikler
+## ✨ Features
 
-*   **📈 FIFO Maliyet Hesabı:** Ürün çıkışı yaparken, stoktaki en eski tarihli partiden düşerek *gerçek* maliyetinizi ve karınızı hesaplar.
-*   **💾 Taşınabilir (Portable):** Kurulum gerektirmez! Tek bir `.exe` dosyası ile USB bellekte bile çalışır.
-*   **🛡️ Güvenli Veri:** Veritabanı (`StokTakip.db`) otomatik olarak `%AppData%\KaraKedi\StokTakip` klasöründe saklanır, masaüstünüzü kirletmez.
-*   **🔄 Yedekle & Geri Yükle:** Verilerinizi tek tıkla `başka bir konuma` yedekleyebilir veya geri yükleyebilirsiniz.
-*   **📊 Detaylı Raporlama:** Satış geçmişi, stok hareketleri ve mevcut stok durumunu anlık olarak görüntüleyin.
-*   **🎨 Modern Arayüz:** Göz yormayan, şık ve kullanıcı dostu WPF tasarımı.
+*   **📈 FIFO Cost Calculation:** Automatically deducts from the oldest dated batch when issuing products, calculating your *real* cost and profit.
+*   **💾 Portable:** No installation required! Runs from a single `.exe` file, even on a USB drive.
+*   **🛡️ Secure Data:** The database (`StokTakip.db`) is automatically stored in the `%AppData%\KaraKedi\StokTakip` folder, keeping your desktop clean and your data safe.
+*   **🔄 Backup & Restore:** Easily backup or restore your data to `any location` with a single click.
+*   **📊 Detailed Reporting:** Instantly view sales history, stock movements, and current stock status.
+*   **🎨 Modern Interface:** A stylish, user-friendly WPF design that is easy on the eyes.
 
-## ⚙️ Kurulum ve Çalıştırma
+## ⚙️ Installation & Run
 
-Bu proje **.NET 9** teknolojisi ile geliştirilmiştir ve tamamen **taşınabilirdir**.
+This project is developed with **.NET 9** technology and is completely **portable**.
 
-1.  GitHub **Releases** sayfasından son sürümü (`StokTakip.exe`) indirin.
-2.  Dosyayı masaüstüne veya dilediğiniz bir klasöre atın.
-3.  Çift tıklayıp çalıştırın. Hepsi bu kadar! 🚀
+1.  Download the latest release (`StokTakip.exe`) from the GitHub **Releases** page.
+2.  Place the file on your desktop or any folder you wish.
+3.  Double-click to run. That's all! 🚀
 
-> **Not:** Uygulama ilk açılışta veritabanını otomatik oluşturur. Ekstra bir ayar yapmanıza gerek yoktur.
+> **Note:** The application automatically creates the database on first run. No extra configuration is needed.
 
-## 🛠️ Kullanılan Teknolojiler
+## 🛠️ Technologies Used
 
-*   **Dil:** C#
+*   **Language:** C#
 *   **Framework:** .NET 9 (WPF - Windows Presentation Foundation)
-*   **Veritabanı:** SQLite (Yerel, dosya tabanlı)
-*   **ORM:** Dapper (Yüksek performanslı veri erişimi)
-*   **Mimari:** MVVM Pattern (Model-View-ViewModel)
+*   **Database:** SQLite (Local, file-based)
+*   **ORM:** Dapper (High-performance data access)
+*   **Architecture:** MVVM Pattern (Model-View-ViewModel)
 
-## 👤 Geliştirici
+## 👤 Developer
 
-Bu proje **Hüseyin Can Çaltı** tarafından geliştirilmiştir.
+This project was developed by **Hüseyin Can Çaltı**.
 
-🔗 Diğer projelerim, oyunlarım ve içeriklerim için web sitemi ziyaret etmeyi unutmayın:  
+🔗 Don't forget to visit my website for my other projects, games, and content:  
 👉 [**https://huseyincancalti.github.io/karakedidub/**](https://huseyincancalti.github.io/karakedidub/)
 
 ---

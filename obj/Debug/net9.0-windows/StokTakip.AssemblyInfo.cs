@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Hüseyin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e1ba80c6c71bc6d1bdea7d30b89ca77c8eefc8b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb3513b12c840cfa5397aaa73ab2ce69c810ac2f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Stok Takip")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StokTakip")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

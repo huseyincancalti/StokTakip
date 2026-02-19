@@ -1,0 +1,93 @@
+<Window x:Class="StokTakip.Views.Components.CustomMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Mesaj" Height="250" Width="450"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Icon="/ico/logo.png"
+        SizeToContent="Height"
+        MaxHeight="600"
+        AllowsTransparency="True" WindowStyle="None" Background="Transparent">
+
+    <Grid>
+        <!-- Backdrop Shadow -->
+        <Border Background="#95000000" CornerRadius="12" Margin="10">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" ShadowDepth="0" Opacity="0.4"/>
+            </Border.Effect>
+        </Border>
+
+        <!-- Main Card -->
+        <Border x:Name="MainBorder" Background="White" CornerRadius="12" Margin="10" BorderThickness="1" BorderBrush="#E2E8F0"
+                MouseLeftButtonDown="Window_MouseLeftButtonDown">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/> <!-- Header -->
+                    <RowDefinition Height="*"/>    <!-- Content (Flexible) -->
+                    <RowDefinition Height="Auto"/> <!-- Footer (Buttons) -->
+                </Grid.RowDefinitions>
+
+                <!-- Header -->
+                <Border Grid.Row="0" x:Name="HeaderBorder" Background="#F8FAFC" CornerRadius="12,12,0,0" Padding="20,15">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock x:Name="TxtIcon" Text="ℹ️" FontSize="20" Margin="0,0,10,0"/>
+                            <TextBlock x:Name="TxtTitle" Text="Bilgi" FontSize="18" FontWeight="Bold" Foreground="#334155"/>
+                        </StackPanel>
+                        <!-- Close Button (X) -->
+                        <Button Content="✕" HorizontalAlignment="Right" VerticalAlignment="Center"
+                                Background="Transparent" BorderThickness="0" Foreground="#94A3B8"
+                                FontWeight="Bold" FontSize="16" Cursor="Hand" Click="BtnClose_Click"/>
+                    </Grid>
+                </Border>
+
+                <!-- Content -->
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="25,20" MaxHeight="350">
+                    <TextBlock x:Name="TxtMessage" Text="İşlem başarıyla tamamlandı." 
+                               TextWrapping="Wrap" FontSize="15" Foreground="#475569" LineHeight="24"/>
+                </ScrollViewer>
+
+                <!-- Footer -->
+                <Border Grid.Row="2" Padding="20" Background="Transparent">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="BtnCopy" Content="📋 Kopyala" Click="BtnCopy_Click" Visibility="Visible"
+                                Background="Transparent" Foreground="#64748B" BorderThickness="1" BorderBrush="#E2E8F0"
+                                Width="100" Height="40" Margin="0,0,10,0" Cursor="Hand"
+                                FontSize="14" FontWeight="SemiBold" ToolTip="Hata mesajını kopyala">
+                             <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="8"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+                        <Button x:Name="BtnCancel" Content="İptal" Click="BtnCancel_Click" Visibility="Collapsed"
+                                Background="Transparent" Foreground="#64748B" BorderThickness="1" BorderBrush="#CBD5E1"
+                                Width="100" Height="40" Margin="0,0,10,0" Cursor="Hand"
+                                FontSize="14" FontWeight="SemiBold">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="8"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+                        <Button x:Name="BtnOk" Content="Tamam" Click="BtnOk_Click"
+                                Background="#3B82F6" Foreground="White" BorderThickness="0"
+                                Width="100" Height="40" Cursor="Hand"
+                                FontSize="14" FontWeight="SemiBold">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="8"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

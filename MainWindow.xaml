@@ -1,0 +1,87 @@
+﻿<Window x:Class="StokTakip.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StokTakip"
+        mc:Ignorable="d"
+        Title="Stok Takip &amp; Maliyet Sistemi v1.0" Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen"
+        Icon="/ico/logo.png"
+        Background="{StaticResource AppBackground}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <Border Background="{StaticResource SidebarBackground}">
+            <Grid Margin="0,20,0,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0">
+                    <TextBlock Text="Stok Takip" Foreground="White" FontSize="24" FontWeight="Bold" Margin="30,0,0,40"/>
+
+                    <RadioButton x:Name="MenuProducts" Content="Ürünler" Style="{StaticResource NavButtonStyle}" 
+                                 Tag="ProductsView" Checked="Menu_Checked"/>
+                    
+                    <RadioButton x:Name="MenuStockEntry" Content="Stok Giriş" Style="{StaticResource NavButtonStyle}" 
+                                 Tag="StockEntryView" Checked="Menu_Checked"/>
+                    
+                    <RadioButton x:Name="MenuSales" Content="Stok Çıkış" Style="{StaticResource NavButtonStyle}" 
+                                 Tag="SalesView" Checked="Menu_Checked"/>
+                    
+                    <RadioButton x:Name="MenuHistory" Content="İşlem Geçmişi" Style="{StaticResource NavButtonStyle}" 
+                                 Tag="HistoryView" Checked="Menu_Checked"/>
+
+                    <RadioButton x:Name="MenuBackup" Content="Yedekle / Geri Yükle" Style="{StaticResource NavButtonStyle}" 
+                                 Tag="BackupView" Checked="Menu_Checked"/>
+                </StackPanel>
+
+                <Button Grid.Row="2" Content="⚠️ Verileri Sıfırla" HorizontalAlignment="Left" Margin="30,0,0,0"
+                        Foreground="#FF7F7F" Background="Transparent" BorderThickness="0" Cursor="Hand"
+                        FontSize="14" Click="BtnReset_Click"/>
+            </Grid>
+        </Border>
+
+        <!-- Main Content Area -->
+        <Border Grid.Column="1" Background="{StaticResource AppBackground}">
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Margin="20"/>
+        </Border>
+
+        <!-- Reset Confirmation Overlay (Global) -->
+        <Grid x:Name="PnlResetConfirm" Visibility="Collapsed" Grid.ColumnSpan="2" Background="#95000000">
+            <Border Background="White" BorderBrush="#EF4444" BorderThickness="1" CornerRadius="12" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center" Padding="30" Width="450">
+                <StackPanel>
+                    <TextBlock Text="⚠️ Dikkat: Tüm Veriler Silinecek!" Foreground="#991B1B" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,15"/>
+                    <TextBlock Text="Bu işlem geri alınamaz. Ürünler, stoklar ve geçmiş kayıtların hepsi silinecektir." TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,25" Foreground="#7F1D1D" FontSize="14"/>
+                    
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Content="İptal" Click="BtnCancelReset_Click" Background="Transparent" Foreground="#7F1D1D" BorderThickness="1" BorderBrush="#FECACA" Width="80" Height="40" Margin="0,0,10,0"/>
+                        <Button Content="💾 Yedekle" Click="BtnResetBackup_Click" Background="#3B82F6" Foreground="White" BorderThickness="0" Width="100" Height="40" Margin="0,0,10,0">
+                             <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="6"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button x:Name="BtnConfirmReset" Content="Onayla (2)" Click="BtnConfirmReset_Click" Background="#EF4444" Foreground="White" Width="120" Height="40" IsEnabled="False">
+                             <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="6"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

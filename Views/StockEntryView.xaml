@@ -1,0 +1,86 @@
+<UserControl x:Class="StokTakip.Views.StockEntryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="{StaticResource CardBackground}" CornerRadius="12" Padding="30" Margin="0,0,0,20" VerticalAlignment="Top">
+            <Border.Effect>
+                <DropShadowEffect Color="#E2E8F0" BlurRadius="20" ShadowDepth="5" Opacity="0.5"/>
+            </Border.Effect>
+
+            <StackPanel>
+                <TextBlock Text="Stok Giriş" FontSize="20" FontWeight="Bold" Margin="0,0,0,25" Foreground="{StaticResource TextPrimary}"/>
+
+                <!-- Mode Selection -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,25">
+                    <RadioButton x:Name="RbExisting" Content="Mevcut Ürüne Ekle" IsChecked="True" Checked="Mode_Checked" 
+                                 FontSize="15" Margin="0,0,20,0" Foreground="{StaticResource TextPrimary}"/>
+                    <RadioButton x:Name="RbNew" Content="Yeni Ürün Ekle" Checked="Mode_Checked" 
+                                 FontSize="15" Foreground="{StaticResource TextPrimary}"/>
+                </StackPanel>
+
+                <!-- Existing Product Form -->
+                <StackPanel x:Name="PnlExisting">
+                    <TextBlock Text="Ürün Seç" Foreground="{StaticResource TextSecondary}" Margin="0,0,0,8"/>
+                    <ComboBox x:Name="CmbProducts" DisplayMemberPath="Name" SelectedValuePath="Id" Padding="10" Margin="0,0,0,20" Height="45"/>
+                </StackPanel>
+
+                <!-- New Product Form -->
+                <StackPanel x:Name="PnlNew" Visibility="Collapsed">
+                    <TextBlock Text="Ürün Adı" Foreground="{StaticResource TextSecondary}" Margin="0,0,0,8"/>
+                    <TextBox x:Name="TxtNewProductName" Margin="0,0,0,20" Height="45" Padding="10" Tag="Örn: Osmancık Pirinç"/>
+
+                    <Grid Margin="0,0,0,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                            <TextBlock Text="Birim" Foreground="{StaticResource TextSecondary}" Margin="0,0,0,8"/>
+                            <ComboBox x:Name="CmbNewUnit" Height="45" Padding="10">
+                                <ComboBoxItem Content="KG"/>
+                                <ComboBoxItem Content="Adet"/>
+                                <ComboBoxItem Content="Litre"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                             <TextBlock Text="Kritik Stok" Foreground="{StaticResource TextSecondary}" Margin="0,0,0,8"/>
+                             <TextBox x:Name="TxtNewCriticalStock" Height="45" Padding="10" Tag="Örn: 20"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+
+                    <!-- Stok Detayları -->
+                    <Grid>
+                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" Margin="0,0,15,0">
+                            <TextBlock x:Name="LblCostPrice" Text="Birim Maliyet Fiyatı (TL):" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                            <TextBox x:Name="TxtCostPrice" Height="45" VerticalContentAlignment="Center" Padding="5" Tag="Örn: 15.50"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Margin="0,0,15,0">
+                            <TextBlock x:Name="LblQuantity" Text="Miktar:" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                            <TextBox x:Name="TxtQuantity" Height="45" VerticalContentAlignment="Center" Padding="5" Tag="Örn: 100"/>
+                        </StackPanel>
+
+                        <Button Grid.Column="2" Content="Kaydet ve Ekle" Width="150" Height="45" VerticalAlignment="Bottom" Click="BtnSave_Click" Style="{StaticResource GreenBtnStyle}" FontSize="16"/>
+                    </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

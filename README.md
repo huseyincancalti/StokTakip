@@ -21,7 +21,7 @@ Instead of dealing with complex Excel files, it streamlines your stock managemen
 
 This project is developed with **.NET 9** technology and is completely **portable**.
 
-1.  Download the latest release (`StokTakip.exe`) from the [**https://github.com/huseyincancalti/StokTakip/releases/tag/v1.0.0/**](https://github.com/huseyincancalti/StokTakip/releases/tag/v1.0.0/) page.
+1.  Download the latest release (`StokTakip.exe`) from the [**GitHub Releases**](https://github.com/huseyincancalti/StokTakip/releases/tag/v1.0.0/) page.
 2.  Place the file on your desktop or any folder you wish.
 3.  Double-click to run. That's all! 🚀
 
